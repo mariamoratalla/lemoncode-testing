@@ -60,5 +60,9 @@ export function nuevaPartidaLogica() {
 }
 
 export function finalizarPartidaEstado() {
-  partida.estado = "finalizada";
+  if (partida.puntuacion === 7.5) {
+    partida.estado = "gana";
+  } else if (partida.puntuacion > 7.5) {
+    partida.estado = "pierde";
+  }
 }

@@ -1,6 +1,6 @@
 interface Partida {
   puntuacion: number;
-  estado: "jugando" | "finalizada" | "no inicializada";
+  estado: "jugando" | "gana" | "pierde" | "no inicializada";
 }
 
 export const partida: Partida = {
