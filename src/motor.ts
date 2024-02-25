@@ -1,7 +1,13 @@
 import { Carta, partida } from "./modelo";
 
-function generarNumero() {
-  return Math.floor(Math.random() * 10) + 1;
+export function generarNumero() {
+  let numero = Math.floor(Math.random() * 10 + 1);
+
+  if (numero > 7) {
+    numero += 2;
+  }
+
+  return numero;
 }
 
 export function actualizarPuntuacion(carta: number) {
@@ -13,16 +19,7 @@ export function actualizarPuntuacion(carta: number) {
 }
 
 export function pedirCarta(): Carta {
-  let numero = generarNumero();
-  let carta: Carta;
-
-  if (numero > 7) {
-    carta = (numero + 2) as Carta;
-  } else {
-    carta = numero as Carta;
-  }
-  partida.estado = "jugando";
-
+  let carta: Carta = generarNumero() as Carta;
   return carta;
 }
 
@@ -33,7 +30,6 @@ export function siguienteCarta() {
 
   if (partida.puntuacion <= 7) {
     if (valorSiguienteCarta > 7) {
-      nombreSiguienteCarta = valorSiguienteCarta + 2;
       valorSiguienteCarta = 0.5;
     }
 
