@@ -2,7 +2,7 @@ import { partida } from "./modelo";
 import { finalizarPartidaEstado, generarNumero, pedirCarta } from "./motor";
 import { vi } from "vitest";
 
-describe("motor", () => {
+describe("Motor del juego", () => {
   describe("finalizarPartidaEstado", () => {
     it("Si la puntuación es 7.5 debería cambiar el estado de la partida a GANA", () => {
       //Arrange
