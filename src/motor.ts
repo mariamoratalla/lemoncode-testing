@@ -56,9 +56,15 @@ export function nuevaPartidaLogica() {
 }
 
 export function finalizarPartidaEstado() {
+  let estado = partida.estado;
+
   if (partida.puntuacion === 7.5) {
-    partida.estado = "gana";
+    estado = "gana";
   } else if (partida.puntuacion > 7.5) {
-    partida.estado = "pierde";
+    estado = "pierde";
+  } else {
+    estado = "jugando";
   }
+
+  return estado;
 }
